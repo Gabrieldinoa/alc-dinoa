@@ -1,7 +1,7 @@
 import numpy as np
 import math as m
 
-matriz=np.array([[1,2,3,2],[2,3,4,7],[1,3,2,2],[3,4,6,10]])
+matriz=np.array([[10,1,1,2],[1,3,4,1],[1,2,2,2],[3,4,1,0]])
 tam=len(matriz)
 print(tam)
 print(matriz)
@@ -15,7 +15,8 @@ for k in range(0,tam-1):
     for n in range(k+1,tam):
         print(n)
         matriz[n]=matriz[k][k]*matriz[n]-matriz[n][k]*matriz[k]
-        identidade[n]=identidade[k][k]*identidade[n]-identidade[n][k]*identidade[k]
+        identidade[n]=matriz[k][k]*identidade[n]-matriz[n][k]*identidade[k]
+        
 
     
 print(matriz)
@@ -28,7 +29,7 @@ for t in range(1,tam):
     for n in range(0,t):
         print(t)
         matriz[n]=matriz[t][t]*matriz[n]-matriz[n][t]*matriz[t]
-        identidade[n]=identidade[t][t]*identidade[n]-identidade[n][t]*identidade[t]
+        identidade[n]=matriz[t][t]*identidade[n]-matriz[n][t]*identidade[t]
 
 print(matriz)
 
@@ -53,5 +54,3 @@ print(matriz)
 #     matriz[n]=matriz[3][3]*matriz[n]-matriz[n][3]*matriz[3]
 
 # print(matriz)
-
-print(identidade[1])
