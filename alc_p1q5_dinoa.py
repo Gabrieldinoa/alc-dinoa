@@ -26,7 +26,10 @@ def inversa_eliminacao(matriz):
         
         for k in range(0,tam-1):
             
+            if matriz[k][k]==0:
+                print('Surgiu um zero na diagonal principal')
             matriz[k]=matriz[k]/matriz[k][k]
+            
             
             for n in range(k+1,tam):
                 
@@ -44,6 +47,6 @@ def inversa_eliminacao(matriz):
         print(f' A matriz aumentada invertida é: {matriz}')
         print(f'Gabarito: {matriz_inversa}')
         
-matriz=np.array([[2,1,1,5,7],[3,3,3,1,2],[1,3,2,7,3],[2.4,6,1,8,2],[3,5,3,2,7]])
+matriz=np.array([[3,3,1.4,3],[3,2,5,5],[1,3,2,2],[2,4.5,6,2]])
 
 inversa_eliminacao(matriz)
