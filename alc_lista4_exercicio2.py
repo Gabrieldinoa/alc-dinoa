@@ -4,6 +4,7 @@ from scipy.linalg import lu
 def LUDECOMP(A):
     import numpy as np    
     print('A Matriz de entrada é:')
+    A=np.array(A,dtype=float)
     print(A)
     A_original=A.copy()
     n=len(A)
@@ -31,7 +32,7 @@ def LUDECOMP(A):
         for j in range(i+1,n):
             L[i][j]=0
     U=A.copy()
-    
+    print('Resultados com meu algoritmo: ')
     print('P :')
     print(P)
     print('L :')
@@ -41,15 +42,18 @@ def LUDECOMP(A):
     A=A_original.copy()
     return P,L,U
 
-A=np.array([[3.0,8,1],[5,2,0],[6,1,12]])
+A=np.array([[3,8,1],[5,2,0],[6,1,12]])
+
 A_original=A.copy()
-[x,y,z]=LUDECOMP(A)
+[P,L,U]=LUDECOMP(A)
 A=A_original 
 
 print('Resultados com o scipy:')
-a,b,c=lu(A)
-print(a)
-print(b)
-print(c)
-
+P1,L1,U1=lu(A)
+print('P :')
+print(P1)
+print('L :')
+print(L1)
+print('U :')
+print(U1)
 
